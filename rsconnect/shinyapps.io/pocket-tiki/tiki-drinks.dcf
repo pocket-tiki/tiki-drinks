@@ -1,0 +1,13 @@
+name: tiki-drinks
+title: tiki-drinks
+username:
+account: pocket-tiki
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7389283
+bundleId: 6430735
+url: https://pocket-tiki.shinyapps.io/tiki-drinks/
+when: 1666483330.82824
+lastSyncTime: 1666483330.82825
+asMultiple: FALSE
+asStatic: FALSE
