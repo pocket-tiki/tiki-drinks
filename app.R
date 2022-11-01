@@ -13,30 +13,56 @@ library(here)
 library(DT)
 library(shinyWidgets)
 library(shinydashboard)
+library(sass)
+library(gt)
+library(gtExtras)
+
 
 #xxx...from category specific checkbox groups, combine all checked to filter
 
 data <- read_csv(here('pocket_tiki_data.csv')) %>% 
   rename(ingredients_string = ingredients_list) %>% 
   mutate(ingredients_list = as.list(strsplit(ingredients_string, ", "))) %>% 
-  mutate(num_ing = lengths(ingredients_list))
+  mutate(num_ing = lengths(ingredients_list)) %>% 
+  arrange(cocktail_name)
 
 ing_categories <- read_csv(here("ingredient_categories.csv"))
 
 all_ingredients <- as_tibble(unique(unlist(strsplit(data$ingredients_string, ", ")))) %>% 
   rename(ingredient = value) %>% 
+  arrange(ingredient) %>% 
   left_join(ing_categories, by = 'ingredient')
-# Tue Oct 25 15:16:21 2022 ------------------------------
 
-fruit <- all_ingredients %>% filter(category == "fruit")
-misc <- all_ingredients %>% filter(category == "misc" | is.na(category))
-juice <- all_ingredients %>% filter(category == "juice")
-syrup <- all_ingredients %>% filter(category == "syrup")
-liqueur <- all_ingredients %>% filter(category == "liqueur")
 spirit <- all_ingredients %>%  filter(category == "spirit")
-bitters <- all_ingredients %>% filter(category == "bitters")
+spirit_choices <- spirit$ingredient
+spirit_initial <- na.omit(spirit$ingredient[spirit$initially_selected == "yes"])
+
+liqueur <- all_ingredients %>% filter(category == "liqueur")
+liqueur_initial <- liqueur$ingredient[liqueur$initially_selected == "yes"]
+  
+juice <- all_ingredients %>% filter(category == "juice")
+juice_initial <- juice$ingredient[juice$initially_selected == "yes"]
+  
+fruit <- all_ingredients %>% filter(category == "fruit")
+fruit_initial <- fruit$ingredient[fruit$initially_selected == "yes"]
+
+syrup <- all_ingredients %>% filter(category == "syrup")
+syrup_initial <- syrup$ingredient[syrup$initially_selected == "yes"]
+
 mixer <- all_ingredients %>% filter(category == "mixer")
+mixer_initial <- mixer$ingredient[mixer$initially_selected == "yes"]
+
+bitters <- all_ingredients %>% filter(category == "bitters")
+bitters_initial <- bitters$ingredient[bitters$initially_selected == "yes"]
+
 spice <- all_ingredients %>% filter(category == "spice")
+spice_initial <- spice$ingredient[spice$initially_selected == "yes"]
+
+misc <- all_ingredients %>% filter(category == "misc" | is.na(category))
+misc_initial <- misc$ingredient[misc$initially_selected == "yes"]
+
+myChoices = names(mtcars)
+initialChoices = c("mpg", "cyl")
 
 # Define UI for application that draws a histogram
 
@@ -45,6 +71,18 @@ ui <- dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       menuItem(h3("Spirits"),
+               sliderTextInput(
+                 inputId = "spiritsSliderText", 
+                 label = "", 
+                 grid = TRUE, force_edges = FALSE,
+                 choices = c("Select None", "Default Selection", "Select All"),
+                 selected = "Default Selection"),
+               awesomeCheckboxGroup(
+                 inputId = "spirit_checkbox", label = "", 
+                 choices = spirit_choices,
+                 selected = spirit_initial
+               )),
+      menuItem(h3("xSpirits"),
                pickerInput(
                  inputId = "spirit_picker",
                  choices = spirit$ingredient,
@@ -106,26 +144,133 @@ ui <- dashboardPage(
                  choices = misc$ingredient,
                  selected = misc$ingredient[misc$initially_selected == "yes"],
                  options = list(`actions-box` = TRUE),
-                 multiple = TRUE))
+                 multiple = TRUE)),
+      menuItem(h3("test...xxx"),
+               awesomeCheckboxGroup(
+                 inputId = "Id044",
+                 label = "", 
+                 choices = misc$ingredient,
+                 selected = misc$ingredient[misc$initially_selected == "yes"]
+               )),
+      menuItem(h3("test...select all"),
+               sliderTextInput(
+                 inputId = "mySliderText", 
+                 label = "Your choice:", 
+                 grid = TRUE, 
+                 force_edges = FALSE,
+                 choices = c("Select Name", "Default Selection", "Select All"),
+                 selected = "Default Selection"),
+               awesomeCheckboxGroup(
+                 inputId = "mtcars",
+                 label = "mtcars column variables", 
+                 choices = myChoices,
+                 selected = initialChoices
+               ))
     ) # end sidebar menu
   ), # end dashboard sidebar
   dashboardBody(
-    #DT::dataTableOutput(outputId = "drinks_you_can_make_table"),
+    tags$head(tags$style(HTML('
+        /* logo */
+        .skin-blue .main-header .logo {
+                              background-color: #387467; # header bar (top left corner)
+                              }
+
+        /* logo when hovered */
+        .skin-blue .main-header .logo:hover {
+                              background-color: #1ea896; # top left corner hover
+                              }
+
+        /* navbar (rest of the header) */
+        .skin-blue .main-header .navbar {
+                              background-color: #387467; # header
+                              }        
+
+        /* main sidebar */
+        .skin-blue .main-sidebar {
+                              background-color: #1ea896; # overflow sidebae
+                              }
+
+        /* active selected tab in the sidebarmenu */
+        .skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
+                              background-color: #387467; # selected category
+                              }
+
+        /* other links in the sidebarmenu */
+        .skin-blue .main-sidebar .sidebar .sidebar-menu a{
+                              background-color: #1ea896; # sidebar
+                              color: #ffffff; # behind dropdowns
+                              }
+
+        /* other links in the sidebarmenu when hovered */
+         .skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
+                              background-color: #ff715b; #hover category
+                              }
+        /* toggle button when hovered  */                    
+         .skin-blue .main-header .navbar .sidebar-toggle:hover{
+                              background-color: #ffffff;
+                              }
+                              '))),
+    # tags$head(
+    #   tags$link(rel = "stylesheet", type = "text/css", href = "shinydashboard_default.css")),
     tabsetPanel(
       tabPanel(title = "Drinks Made With Only Selected Ingredients",
                DT::dataTableOutput(outputId = "drinks_you_can_make_table")),
       tabPanel(title = "All Drinks",
-               textOutput(outputId = "mis_ing"),
-               DT::dataTableOutput(outputId = "missing_ingredient_table"))
+               #textOutput(outputId = "mis_ing"),
+               DT::dataTableOutput(outputId = "missing_ingredient_table")),
+      tabPanel(title = "test",
+               tableOutput(outputId = "test_table"))
     )
   ) # end dashboard body
 ) # end dashboard page
 
 # Define server logic required to draw a histogram
-server <- function(input, output) {
+server <- function(input, output, session) {
+  
+  test_selected <- reactive({
+    if (input$mySliderText == "Default Selection") {
+      return(initialChoices)
+    } else if (input$mySliderText == "Select All") {
+      return(myChoices)
+    } else {
+      NULL
+    }
+  })
+  
+  # observe({
+  #   updateAwesomeCheckboxGroup(
+  #     session, 'mtcars', choices = myChoices,
+  #     selected = test_selected()
+  #   )
+  # })
+  
+  spirit_selected <- reactive({
+    if (input$spiritsSliderText == "Default Selection") {
+      #return(c("gin", "pisco"))
+      #return(na.omit(spirit_initial))
+      return(spirit_initial)
+      #return(spirit$ingredient[spirit$initially_selected == "yes"])
+    } else if (input$spiritsSliderText == "Select All") {
+      return(spirit_choices)
+    } else {
+      NULL
+    }
+  })
+
+  observe({
+    updateAwesomeCheckboxGroup(
+      session, inputId = 'spirit_checkbox',
+      #choices = spirit_choices,
+      selected = spirit_selected()
+    )
+  })
+  
+  # available_ingredients <- reactive({
+  #   as.list(c(input$spirit_picker, input$spice_picker, input$liqueur_picker, input$bitters_picker, input$misc_picker, input$juice_picker, input$fruit_picker, input$syrup_picker, input$mixer_picker))
+  # })
   
   available_ingredients <- reactive({
-    as.list(c(input$spirit_picker, input$spice_picker, input$liqueur_picker, input$bitters_picker, input$misc_picker, input$juice_picker, input$fruit_picker, input$syrup_picker, input$mixer_picker))
+    as.list(c(input$spirit_checkbox, input$spice_picker, input$liqueur_picker, input$bitters_picker, input$misc_picker, input$juice_picker, input$fruit_picker, input$syrup_picker, input$mixer_picker))
   })
   
   missing_ingredients <- reactive({
@@ -172,34 +317,6 @@ server <- function(input, output) {
                   filter = 'top')
   })
   
-  # number_available_ingredients <- reactive({
-  #   function(df){
-  #     ing_unlist_DT2 <- unlist(df$ingredients_list)
-  #     ing_list_DT2 <- as.list(ing_unlist_DT2)
-  #     num_ing_avail <- sum(ing_list_DT2 %in% available_ingredients())
-  #     return(num_ing_avail)
-  #   }
-  # })
-  # 
-  # result_DT2 <- reactive({
-  #   apply(data, 1, number_available_ingredients())
-  # })
-  
-  # data_for_table2 <- reactive({
-  #   data %>% 
-  #     cbind(num_ingredients_available = result_DT2()) %>% 
-  #     filter(num_ingredients_available > 0)
-  #     #select(1:5)
-  # })
-  # 
-  # output$drinks_with_at_least_1_ingredient_table <- DT::renderDataTable({
-  #   DT::datatable(data_for_table2(),
-  #                 options = list(pageLength = 25),
-  #                 rownames = FALSE,
-  #                 #colnames = c("Cocktail Name", "Ingredients List", "Recipe", "Glass Type", "Source"),
-  #                 filter = 'top')
-  # })
-  
   number_missing_ingredients_fun <- reactive({ function(df){
     ing_unlist_1 <- unlist(df$ingredients_list)
     ing_list_1 <- as.list(ing_unlist_1)
@@ -241,6 +358,20 @@ server <- function(input, output) {
                   rownames = FALSE,
                   colnames = c("Cocktail Name", "Ingredients List", "Number of Available Ingredients", "Missing Ingredients", "Recipe", "Glass Type", "Source"),
                   filter = 'top')
+  })
+  
+  data_for_test_table <- reactive({
+    data %>% 
+      cbind(result = results()) %>% 
+      filter(result == "can make") %>% 
+      select(1:5) %>% 
+      mutate(ingredients_linebreak = str_replace_all(ingredients_string, ", ", "<br>"))
+  })
+  
+  output$test_table <- renderTable({
+    data_for_test_table() %>% 
+      gt() %>% 
+      gt_theme_nytimes()
   })
   
 
