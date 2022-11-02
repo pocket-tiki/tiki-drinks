@@ -1,3 +1,23 @@
+
+
+/*-- scss:defaults --*/
+
+$link-color: #447099;
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-monospace: 'Fira Mono', monospace;
+
+$presentation-title-slide-text-align: left;
+
+$theme-teal: #1ea896;
+$theme-teal_dark: #387467;
+$theme-teal_light: #57beb1;
+$theme-white: #ebebeb;
+
+
+/*-- scss:rules --*/
+
+
+
 /* A replacement for .small-box .icon, where the icon is smaller and doesn't
    change size when moused over. */
 .small-box .icon-large {
@@ -57,8 +77,8 @@ div.box-body .shiny-input-container {
 
 /* Sidebar is dark, so make text light by default. */
 .sidebar {
-  color: #f42272;
-  /*color: #fff;*/
+  /*color: #523f38;*/
+  color: $theme-white;
 }
 /* Slider min and max in sidebar. */
 .sidebar .irs-min, .sidebar .irs-max {
@@ -91,4 +111,66 @@ a > .info-box {
     background-color: #ff715b;
     background-image: none;
     border-color: #ff715b;
+}
+
+/* logo header bar (top left corner)*/
+.skin-blue .main-header .logo {
+  background-color: $theme-teal;
+  font-size: 28px;
+  font-weight: bold;
+  color: $theme-white;
+}
+
+/* logo (top left corner) when hovered */
+.skin-blue .main-header .logo:hover {
+background-color: $theme-teal_dark;
+}
+
+/* navbar (rest of the header) */
+.skin-blue .main-header .navbar {
+background-color: $theme-teal;
+}   
+
+/* main sidebar */
+.skin-blue .main-sidebar {
+  background-color: $theme-teal_dark;
+}
+
+/* active selected tab in the sidebarmenu */
+.skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
+  background-color: #523f38;
+}
+
+/* other links in the sidebarmenu (sidebar and behind dropdowns)*/
+.skin-blue .main-sidebar .sidebar .sidebar-menu a{
+  background-color: $theme-teal_dark;
+  color: $theme-white;
+}
+
+/* other links in the sidebarmenu when hovered (hover category)*/
+.skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
+  background-color: $theme-teal;
+}
+
+/* toggle button when hovered  */                    
+.skin-blue .main-header .navbar .sidebar-toggle:hover{
+  background-color: $theme-white;
+}
+
+.awesome-checkbox {
+    padding-left: 20px;
+    font-size: 18px;
+    /*background-color: #f39c12;*/
+    color: $theme-white; /* checkbox text color */
+}
+
+h3{
+  font-size: 28px;
+  color: $theme-white;
+}
+
+h4{
+  font-size: 20px;
+  font-weight: bold;
+  color: $theme-teal_dark;
 }

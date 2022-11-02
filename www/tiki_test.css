@@ -16,7 +16,6 @@
 
 /* This must remain at the top of this file.                 */
 
-
 html {
   /*-- Main font sizes --*/
   --title-size:      50px;
@@ -38,49 +37,6 @@ html {
   --body-font:       "Montserrat", sans-serif;
   --navbar-font:     "Montserrat", sans-serif;  /* websites + blogs only */
 }
-
-/*-- ARTICLE METADATA --*/
-d-byline {
-  --heading-size:    1.0rem;
-  --heading-color:   rgba(0, 0, 0, 0.5);
-  --body-size:       1.0rem;
-  --body-color:      rgba(0, 0, 0, 0.8);
-}
-
-/*-- ARTICLE TABLE OF CONTENTS --*/
-.d-contents {
-  --heading-size:    13px;
-  --contents-size:   12px;
-}
-
-/*-- ARTICLE APPENDIX --*/
-d-appendix {
-  --heading-size:    12px;
-  --heading-color:   rgba(0, 0, 0, 0.65);
-  --text-size:       0.8em;
-  --text-color:      rgba(0, 0, 0, 0.5);
-}
-
-/*-- WEBSITE HEADER + FOOTER --*/
-/* These properties only apply to Distill sites and blogs  */
-
-.distill-site-header {
-  --title-size:       16px;
-  --text-color:       #ffffff; /* home page header bar text */
-  --text-size:        16px;
-  --hover-color:      white; /*hover color for home page header bar text*/
-  --bkgd-color:       #2d6a4f; /* header bar color */
-}
-
-.distill-site-footer {
-  --text-color:       #ffffff; /* footer text color */
-  --text-size:        12px;
-  --hover-color:      #ffffff; /* hover color for link in footer*/
-  --bkgd-color:       #2d6a4f; /* footer backgroup color */
-}
-
-/*-- Additional custom styles --*/
-/* Add any additional CSS rules below                      */
 
 body {
   background-color: #ffffff; /* homepage background color */
@@ -125,25 +81,19 @@ h6{
   font-size: 14px; /* 6 hashtag header in blog post  */
 }
 
-.distill-site-nav a:hover {
-  font-weight: 1000;
-}
 
-.distill-site-footer a:hover {
-  font-weight: 1000;
-}
+/* logo */
+.skin-blue .main-header .logo {
+  background-color: #387467; # header bar (top left corner)}
 
-/* Buttons on home page */
-.btn-outline-dark {
-    background-color: #2d6a4f;
-    color: #ffffff;
-    border: 0px;
-    /*border-color: black;*/
-    /*border-width: 2px;*/
-}
-
-.btn-outline-dark:hover {
-    background-color: #62937c;
-    color: #ffffff;
+.irs-grid-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 19px;
+    line-height: 9px;
+    padding: 0 3px;
 }
 
