@@ -22,6 +22,7 @@ black blended rum,spirit,yes
 black pepper,spice,yes
 black peppercorns,spice,
 black pot still rum,spirit,yes
+black pot still unaged rum,spirit,yes
 blackberry liqueur,liqueur,
 blanco tequila,spirit,yes
 blended aged rum,spirit,yes
@@ -33,7 +34,7 @@ brown sugar,misc,yes
 butter,misc,yes
 Campari,liqueur,yes
 cane coffey still aged rum,spirit,
-Carbonated Chai Tea,mixer,
+carbonated Chai Tea,mixer,
 champagne,spirit,
 Cherry Heering liqueur,liqueur,
 cinnamon,spice,yes
@@ -43,12 +44,12 @@ cloves,spice,yes
 coconut cream,mixer,yes
 coconut milk,mixer,yes
 coconut water,mixer,yes
-Coffee Liqueur,liqueur,
+coffee liqueur,liqueur,
 column still aged rum,spirit,yes
 column still lightly aged rum,spirit,yes
 crème de cassis,liqueur,
 Demerara syrup,syrup,yes
-Drambuie,liqueur,
+Drambuie liqueur,liqueur,
 dry curaçao,liqueur,
 dry sparkling lemonade,spirit,
 dry vermouth,spirit,
@@ -74,8 +75,8 @@ honey syrup,syrup,yes
 Hot Buttered Rum Batter,misc,
 Jerk Syrup,syrup,
 lemon juice,juice,yes
-li hing mui powder,spice,
-Li Hing Mui Syrup,syrup,
+Li Hing Mui powder,spice,
+Li Hing Mui syrup,syrup,
 Licor 43 spiced liqueur,liqueur,
 lime,fruit,yes
 lime juice,juice,yes
@@ -85,7 +86,7 @@ maple syrup,syrup,yes
 Maraschino liqueur,liqueur,
 mint leaves,misc,yes
 molasses,syrup,yes
-Napa Wine Syrup,syrup,
+Napa wine syrup,syrup,
 nutmeg,spice,yes
 oloroso sherry,liqueur,
 orange bitters,bitters,yes
@@ -114,20 +115,20 @@ rhum agricole vieux,spirit,
 rum,spirit,yes
 rye,spirit,yes
 seltzer,mixer,yes
-Simple Syrup,syrup,yes
+simple syrup,syrup,yes
 sloe gin,spirit,
 sparkling wine,spirit,
 spruce beer soda extract,misc,
 sugarcane syrup,syrup,
 sweet cream,mixer,
 sweetened condensed milk,mixer,
-Tai Rich Simple Syrup,syrup,
+Tai Rich simple syrup,syrup,
 tawny port,spirit,
 tequila blanco,spirit,
 vanilla bean,spice,
-Vanilla Brandy,liqueur,
+vanilla brandy,liqueur,
 vanilla extract,spice,yes
-Vanilla Syrup,syrup,
+vanilla syrup,syrup,
 Velvet Falernum,liqueur,yes
 vodka,spirit,yes
 water,mixer,yes
