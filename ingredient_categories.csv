@@ -1,138 +1,222 @@
-﻿ingredient,category,initially_selected
-absinthe blanc,spirit,
-allspice,spice,yes
-allspice berries,spice,
-Allspice Dram,liqueur,
-almond extract,spice,yes
-Amaro Averna,liqueur,
-Amaro Di Angostura,liqueur,
-Angostura bitters,bitters,yes
-anise seed,spice,
-apple brandy,spirit,
-apricot liqueur,liqueur,
-aquavit,spirit,
-banana liqueur,liqueur,
-Batavia arrack,spirit,
-Benedictine,liqueur,
-Bittermens ‘Elemakule Tiki bitters,bitters,
-Bittermens Burlesque bitters,bitters,
-Bittermens Xocolatl (Chocolate) Mole bitters,bitters,
-black blended overproof rum,spirit,yes
-black blended rum,spirit,yes
-black pepper,spice,yes
-black peppercorns,spice,
-black pot still rum,spirit,yes
-black pot still unaged rum,spirit,yes
-blackberry liqueur,liqueur,
-blanco tequila,spirit,yes
-blended aged rum,spirit,yes
-blended lightly aged rum,spirit,yes
-blue curaçao,liqueur,
-bourbon,spirit,yes
-brandy,spirit,yes
-brown sugar,misc,yes
-butter,misc,yes
-Campari,liqueur,yes
-cane coffey still aged rum,spirit,
-carbonated Chai Tea,mixer,
-champagne,spirit,
-Cherry Heering liqueur,liqueur,
-cinnamon,spice,yes
-cinnamon stick,spice,
-cinnamon syrup,syrup,yes
-cloves,spice,yes
-coconut cream,mixer,yes
-coconut milk,mixer,yes
-coconut water,mixer,yes
-coffee liqueur,liqueur,
-column still aged rum,spirit,yes
-column still lightly aged rum,spirit,yes
-crème de cassis,liqueur,
-Demerara syrup,syrup,yes
-Drambuie liqueur,liqueur,
-dry curaçao,liqueur,
-dry sparkling lemonade,spirit,
-dry vermouth,spirit,
-egg,misc,yes
-egg white,misc,yes
-gin,spirit,yes
-ginger,spice,yes
-ginger ale,mixer,yes
-ginger beer,mixer,yes
-ginger liqueur,liqueur,
-grapefruit beer,mixer,
-grapefruit juice,juice,yes
-grapefruit soda,mixer,yes
-Green Chartreuse,liqueur,
-Grenadine,syrup,yes
-guava soda,mixer,
-heavy whipping cream,mixer,
-Hellfire Tincture,liqueur,
-Herbsaint,liqueur,
-Herbstura,bitters,
-hibiscus liqueur,liqueur,
-honey syrup,syrup,yes
-Hot Buttered Rum Batter,misc,
-Jerk Syrup,syrup,
-lemon juice,juice,yes
-Li Hing Mui powder,spice,
-Li Hing Mui syrup,syrup,
-Licor 43 spiced liqueur,liqueur,
-lime,fruit,yes
-lime juice,juice,yes
-London dry gin,spirit,yes
-Madeira,spirit,
-maple syrup,syrup,yes
-Maraschino liqueur,liqueur,
-mint leaves,misc,yes
-molasses,syrup,yes
-Napa wine syrup,syrup,
-nutmeg,spice,yes
-oloroso sherry,liqueur,
-orange bitters,bitters,yes
-orange juice,juice,yes
-orange peel,fruit,yes
-Orgeat,syrup,yes
-passion fruit honey,syrup,
-passion fruit puree,fruit,
-passion fruit syrup,syrup,yes
-peach,fruit,yes
-peach liqueur,liqueur,yes
-pear liqueur,liqueur,
-Peychaud’s bitters,bitters,
-pineapple,fruit,yes
-pineapple juice,juice,yes
-pisco,spirit,
-pot still aged cachaça,spirit,
-pot still lightly aged rum,spirit,yes
-pot still lightly aged rum (overproof),spirit,yes
-pot still unaged rum,spirit,yes
-Punt e Mes,liqueur,
-raspberry gum syrup,syrup,
-raspberry liqueur,liqueur,
-rhum agricole blanc,spirit,
-rhum agricole vieux,spirit,
-rum,spirit,yes
-rye,spirit,yes
-seltzer,mixer,yes
-simple syrup,syrup,yes
-sloe gin,spirit,
-sparkling wine,spirit,
-spruce beer soda extract,misc,
-sugarcane syrup,syrup,
-sweet cream,mixer,
-sweetened condensed milk,mixer,
-Tai Rich simple syrup,syrup,
-tawny port,spirit,
-tequila blanco,spirit,
-vanilla bean,spice,
-vanilla brandy,liqueur,
-vanilla extract,spice,yes
-vanilla syrup,syrup,
-Velvet Falernum,liqueur,yes
-vodka,spirit,yes
-water,mixer,yes
-whole milk,mixer,yes
-white overproof rum,spirit,yes
-Yellow Chartreuse,liqueur,
-Zirbenz Stone Pine liqueur,liqueur,
+﻿ingredient,category,default_initially_selected,current_party_initially_selected
+absinthe,spirit,,
+absinthe blanc,spirit,,
+agave nectar,syrup,yes,
+aged Barbados rum,spirit,,yes
+aged blended rum,spirit,yes,yes
+aged Demerara rum,spirit,yes,yes
+aged domestic rum,spirit,yes,yes
+aged Jamaican rum,spirit,yes,yes
+aged Martinique rum,spirit,,yes
+aged overproof Jamaican rum,spirit,,yes
+aged overproof rum,spirit,,yes
+aged Puerto Rican rum,spirit,,yes
+allspice,spice,yes,yes
+allspice berries,spice,,
+Allspice Dram,liqueur,,yes
+almond extract,spice,yes,yes
+Amaro Averna,liqueur,,
+Amaro Di Angostura,liqueur,,
+Amaro Montenegro,liqueur,,
+amontillado sherry,liqueur,,
+Angostura bitters,bitters,yes,yes
+anise seed,spice,,
+apple brandy,spirit,,
+apricot liqueur,liqueur,,
+aquavit,spirit,,
+aromatized wine,spirit,,
+banana liqueur,liqueur,,
+Barbados rum,spirit,,yes
+Batavia arrack,spirit,,
+Benedictine,liqueur,,
+Bittermens ‘Elemakule Tiki bitters,bitters,,
+Bittermens Boston Bittahs,bitters,,
+Bittermens Burlesque bitters,bitters,,
+Bittermens Xocolatl (Chocolate) Mole bitters,bitters,,
+black blended overproof rum,spirit,yes,yes
+black blended rum,spirit,yes,yes
+black pepper,spice,yes,yes
+black peppercorns,spice,,
+black pot still rum,spirit,yes,yes
+black pot still unaged rum,spirit,yes,yes
+black rum,spirit,yes,yes
+blackberry liqueur,liqueur,,
+blanco tequila,spirit,yes,
+blended aged rum,spirit,yes,yes
+blended lightly aged rum,spirit,yes,yes
+blended unaged rum,spirit,yes,yes
+blue curaçao,liqueur,,
+bourbon,spirit,yes,yes
+brandy,spirit,yes,
+brown sugar,misc,yes,yes
+butter,misc,yes,yes
+cachaça,spirit,,
+Campari,liqueur,yes,
+cane coffey still aged rum,spirit,,yes
+carbonated Chai Tea,mixer,,
+cardamom pods,spice,,
+carrot juice,juice,,
+champagne,spirit,,
+Cherry Heering liqueur,liqueur,,
+cinnamon,spice,yes,yes
+cinnamon stick,spice,,
+cinnamon syrup,syrup,yes,yes
+cloves,spice,yes,yes
+coconut cream,mixer,yes,
+coconut liqueur,liqueur,,
+coconut milk,mixer,yes,
+coconut soda,mixer,,
+coconut water,mixer,yes,
+coffee concentrate,mixer,,
+coffee liqueur,liqueur,,
+cognac,spirit,yes,
+column still aged rum,spirit,yes,yes
+column still lightly aged rum,spirit,yes,yes
+crème de cassis,liqueur,,
+crème de pêche,liqueur,,
+cucumber-forward gin,spirit,,
+Cynar,liqueur,,
+Demerara rum,spirit,yes,yes
+Demerara syrup,syrup,yes,yes
+Donn's Spices,spice,,
+Drambuie liqueur,liqueur,,
+dry curaçao,liqueur,,yes
+dry gin,spirit,yes,
+dry orange curaçao,liqueur,,
+dry sparkling lemonade,spirit,,
+dry vermouth,spirit,,
+egg,misc,yes,yes
+egg white,misc,yes,yes
+elderflow liqueur,liqueur,,
+Fernet-Branca,liqueur,,
+fino sherry,liqueur,,
+Gardenia Mix,spice,,
+gin,spirit,yes,
+ginger,spice,yes,
+ginger ale,mixer,yes,
+ginger beer,mixer,yes,yes
+ginger liqueur,liqueur,,
+ginger syrup,syrup,,
+grapefruit beer,mixer,,
+grapefruit juice,juice,yes,yes
+grapefruit liqueur,liqueur,,
+grapefruit soda,mixer,yes,
+green Chartreuse,liqueur,,
+green tea-infused Demerara rum,spirit,,
+grenadine,syrup,yes,yes
+guava soda,mixer,,
+heavy cream,mixer,,yes
+Hellfire Tincture,liqueur,,
+Herbsaint,liqueur,,yes
+Herbstura,bitters,,
+hibiscus honey syrup,syrup,,
+hibiscus liqueur,liqueur,,
+honey,misc,yes,
+honey syrup,syrup,yes,yes
+Hot Buttered Rum Batter,misc,,
+Irish whiskey,spirit,yes,
+Jamaican rum,spirit,yes,yes
+Jerk Syrup,syrup,,
+lemon juice,juice,yes,yes
+Li Hing Mui powder,spice,,
+Li Hing Mui syrup,syrup,,
+Licor 43 spiced liqueur,liqueur,,
+lightly aged Barabdos rum,spirit,,yes
+lightly aged Martinique rum,spirit,,yes
+lime,fruit,yes,yes
+lime juice,juice,yes,yes
+London dry gin,spirit,yes,
+Luxardo Bitter Bianco,liqueur,,
+macadamia nut liqueur,liqueur,yes,
+macadamia nut syrup,syrup,,
+Madeira,spirit,,
+mango brandy,spirit,,
+manzanilla sherry,liqueur,,
+maple syrup,syrup,yes,yes
+Maraschino liqueur,liqueur,,
+maraschino liqueur,liqueur,,
+marjoram and pink peppercorn syrup,syrup,,
+mezcal,spirit,yes,
+mint leaves,spice,yes,
+molasses,syrup,yes,yes
+mole bitters,bitters,yes,
+Napa wine syrup,syrup,,
+nutmeg,spice,yes,yes
+oloroso sherry,liqueur,,
+orange,fruit,yes,yes
+orange bitters,bitters,yes,yes
+orange curaçao,liqueur,,
+orange juice,juice,yes,yes
+orange peel,fruit,yes,yes
+orgeat,syrup,yes,yes
+overproof aged Puerto Rican rum,spirit,,yes
+overproof Demerara rum,spirit,,yes
+overproof Jamaican rum,spirit,,yes
+passion fruit honey,syrup,,
+passion fruit juice,juice,yes,
+passion fruit liqueur,liqueur,yes,
+passion fruit purée,fruit,,
+passion fruit syrup,syrup,yes,
+peach,fruit,yes,
+peach liqueur,liqueur,yes,yes
+pear eau de vie,liqueur,,
+pear liqueur,liqueur,,
+peated Scotch,spirit,yes,
+Peychaud’s bitters,bitters,,
+pimento dram,liqueur,,
+pineapple,fruit,yes,
+pineapple juice,juice,yes,yes
+pineapple rum,spirit,,
+pisco,spirit,,
+pot still aged cachaça,spirit,,
+pot still lightly aged rum,spirit,yes,yes
+pot still lightly aged rum (overproof),spirit,yes,yes
+pot still unaged rum,spirit,yes,yes
+Punt e Mes,liqueur,,
+raspberry gum syrup,syrup,,
+raspberry liqueur,liqueur,,
+rhum agricole blanc,spirit,,
+rhum agricole vieux,spirit,,
+rum,spirit,yes,yes
+rye,spirit,yes,
+salt,spice,yes,
+Scotch,spirit,yes,
+seltzer,mixer,yes,yes
+sherry,liqueur,yes,
+shiso leaves,misc,,
+shochu,spirit,,
+simple syrup,syrup,yes,yes
+sloe gin,spirit,,
+smoked salt,spice,yes,
+soda water,mixer,yes,
+sparkling water,mixer,yes,
+sparkling wine,spirit,,
+spiced rum,spirit,yes,
+spruce beer soda extract,misc,,
+sugar,misc,yes,
+sugarcane syrup,syrup,,yes
+Swedish punsch,liqueur,,
+sweet cream,mixer,,
+sweet vermouth,spirit,yes,
+sweetened condensed milk,mixer,,
+Tai Rich simple syrup,syrup,,yes
+tawny port,spirit,,
+tequila,spirit,yes,
+tequila blanco,spirit,,
+tonic water,mixer,yes,
+unaged blended rum,spirit,yes,yes
+unaged Haitian rum,spirit,,yes
+unaged Martinique rum,spirit,,yes
+unaged Puerto Rican rum,spirit,,yes
+vanilla bean,spice,,
+vanilla bean paste,spice,,
+vanilla brandy,liqueur,,
+vanilla extract,spice,yes,yes
+vanilla syrup,syrup,,yes
+velvet falernum,liqueur,yes,yes
+vodka,spirit,yes,
+water,mixer,yes,yes
+white overproof rum,spirit,yes,yes
+whole milk,mixer,yes,yes
+yellow Chartreuse,liqueur,,
+Zirbenz Stone Pine liqueur,liqueur,,

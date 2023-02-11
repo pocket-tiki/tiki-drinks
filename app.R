@@ -18,14 +18,20 @@ library(gt)
 library(gtExtras)
 
 
-#xxx...from category specific checkbox groups, combine all checked to filter
-
-data <- read_csv(here('pocket_tiki_data.csv')) %>% 
+smugglers_cove_data <- read_csv(here('smugglers_cove.csv')) %>% 
   rename(ingredients_string = ingredients_list) %>% 
   mutate(ingredients_list = as.list(strsplit(ingredients_string, ", "))) %>% 
   mutate(num_ing = lengths(ingredients_list)) %>% 
-  arrange(cocktail_name) %>% 
   mutate(ingredients_linebreak = str_replace_all(ingredients_string, ", ", ",<br>"))
+
+easy_tiki_data <- read_csv(here('easy_tiki.csv')) %>% 
+  rename(ingredients_string = ingredients_list) %>% 
+  mutate(ingredients_list = as.list(strsplit(ingredients_string, ", "))) %>% 
+  mutate(num_ing = lengths(ingredients_list)) %>% 
+  mutate(ingredients_linebreak = str_replace_all(ingredients_string, ", ", ",<br>"))
+
+data <- rbind(smugglers_cove_data, easy_tiki_data) %>% 
+  arrange(cocktail_name)
 
 ing_categories <- read_csv(here("ingredient_categories.csv"))
 
@@ -36,42 +42,49 @@ all_ingredients <- as_tibble(unique(unlist(strsplit(data$ingredients_string, ", 
 
 spirit <- all_ingredients %>%  filter(category == "spirit")
 spirit_choices <- spirit$ingredient
-spirit_initial <- na.omit(spirit$ingredient[spirit$initially_selected == "yes"])
+# spirit_initial <- na.omit(spirit$ingredient[spirit$initially_selected == "yes"])
+spirit_initial <- na.omit(spirit$ingredient[spirit$current_party_initially_selected == "yes"])
 
 liqueur <- all_ingredients %>% filter(category == "liqueur")
 liqueur_choices <- liqueur$ingredient
-liqueur_initial <- na.omit(liqueur$ingredient[liqueur$initially_selected == "yes"])
+# liqueur_initial <- na.omit(liqueur$ingredient[liqueur$initially_selected == "yes"])
+liqueur_initial <- na.omit(liqueur$ingredient[liqueur$current_party_initially_selected == "yes"])
   
 juice <- all_ingredients %>% filter(category == "juice")
 juice_choices <- juice$ingredient
-juice_initial <- na.omit(juice$ingredient[juice$initially_selected == "yes"])
+# juice_initial <- na.omit(juice$ingredient[juice$initially_selected == "yes"])
+juice_initial <- na.omit(juice$ingredient[juice$current_party_initially_selected == "yes"])
   
 fruit <- all_ingredients %>% filter(category == "fruit")
 fruit_choices <- fruit$ingredient
-fruit_initial <- na.omit(fruit$ingredient[fruit$initially_selected == "yes"])
+# fruit_initial <- na.omit(fruit$ingredient[fruit$initially_selected == "yes"])
+fruit_initial <- na.omit(fruit$ingredient[fruit$current_party_initially_selected == "yes"])
 
 syrup <- all_ingredients %>% filter(category == "syrup")
 syrup_choices <- syrup$ingredient
-syrup_initial <- na.omit(syrup$ingredient[syrup$initially_selected == "yes"])
+# syrup_initial <- na.omit(syrup$ingredient[syrup$initially_selected == "yes"])
+syrup_initial <- na.omit(syrup$ingredient[syrup$current_party_initially_selected == "yes"])
 
 mixer <- all_ingredients %>% filter(category == "mixer")
 mixer_choices <- mixer$ingredient
-mixer_initial <- na.omit(mixer$ingredient[mixer$initially_selected == "yes"])
+# mixer_initial <- na.omit(mixer$ingredient[mixer$initially_selected == "yes"])
+mixer_initial <- na.omit(mixer$ingredient[mixer$current_party_initially_selected == "yes"])
 
 bitters <- all_ingredients %>% filter(category == "bitters")
 bitters_choices <- bitters$ingredient
-bitters_initial <- na.omit(bitters$ingredient[bitters$initially_selected == "yes"])
+# bitters_initial <- na.omit(bitters$ingredient[bitters$initially_selected == "yes"])
+bitters_initial <- na.omit(bitters$ingredient[bitters$current_party_initially_selected == "yes"])
 
 spice <- all_ingredients %>% filter(category == "spice")
 spice_choices <- spice$ingredient
-spice_initial <- na.omit(spice$ingredient[spice$initially_selected == "yes"])
+# spice_initial <- na.omit(spice$ingredient[spice$initially_selected == "yes"])
+spice_initial <- na.omit(spice$ingredient[spice$current_party_initially_selected == "yes"])
 
 misc <- all_ingredients %>% filter(category == "misc" | is.na(category))
 misc_choices <- misc$ingredient
-misc_initial <- na.omit(misc$ingredient[misc$initially_selected == "yes"])
+# misc_initial <- na.omit(misc$ingredient[misc$initially_selected == "yes"])
+misc_initial <- na.omit(misc$ingredient[misc$current_party_initially_selected == "yes"])
 
-myChoices = names(mtcars)
-initialChoices = c("mpg", "cyl")
 
 # Define UI for application that draws a histogram
 
